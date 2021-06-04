@@ -5,8 +5,8 @@ authors = ["chevdor <chevdor@gmail.com>", "Wilfried Kopp <wilfried@parity.io"]
 edition = "2018"
 license = "MIT"
 description = "subwasm is a utility that works on WASM Runtime of Substrate based chains"
-homepage = "https://gitlab.com/chevdor/subwasm"
-repository = "https://gitlab.com/chevdor/subwasm"
+homepage = "https://github.com/chevdor/subwasm"
+repository = "https://github.com/chevdor/subwasm"
 readme = "README.md"
 keywords = ["wasm", "cli", "substrate", "blockchain", "runtime", "polkadot", "kusama"]
 
@@ -22,3 +22,16 @@ substrate-runtime-proposal-hash = { path = "../libs/substrate-runtime-proposal-h
 assert_cmd = "1.0.4"
 log = "0.4.14"
 env_logger = "0.8.3"
+
+[package.metadata.deb]
+maintainer = "Wilfried Kopp aka. Chevdor <chevdor@gmail.com>"
+copyright = "2021, Wilfried Kopp aka. Chevdor <chevdor@gmail.com>"
+license-file = ["LICENSE", "0"]
+extended-description = """\
+A cli utility to work with Substrate WASM Runtime."""
+depends = "$auto"
+section = "utility"
+priority = "optional"
+assets = [
+    ["target/release/subwasm", "usr/bin/", "755"],
+]
